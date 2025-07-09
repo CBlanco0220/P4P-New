@@ -5,117 +5,212 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>P4P Coaching – Coaching</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="styles.css"/>
-
-  <!-- Section logo styling -->
+  <!-- Inline Styles -->
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #fff;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    /* Navbar */
+    .header {
+      position: fixed; top: 0; width: 100%; background: #000; z-index: 999;
+    }
+    .navbar {
+      max-width: 1200px; margin: 0 auto; display: flex; align-items: center; padding: 1rem;
+    }
+    .nav-logo img { height: 40px; }
+    .nav-links {
+      list-style: none; display: flex; margin-left: auto; gap: 1.5rem;
+    }
+    .nav-links a {
+      color: #fff; text-decoration: none; font-weight: 600;
+      padding: 0.5rem 1rem; border-radius: 4px;
+    }
+    .nav-links a.active-link,
+    .nav-links a:hover {
+      background: #dc2626;
+    }
+    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 4px; }
+    .hamburger .bar { width: 25px; height: 3px; background: #fff; }
+
+    /* Team Section */
+    .team-section {
+      padding: 100px 1rem 2rem;  /* clear fixed navbar */
+      background: #000;
+      text-align: center;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .team-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .team-card {
+      background: #111;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+    }
+    .team-photo {
+      width: 100%; height: 0; padding-top: 75%;
+      object-fit: cover; background-size: cover;
+      background-position: center;
+    }
+    .team-content {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .team-name {
+      font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 700;
+    }
+    .team-bio {
+      flex: 1;
+      font-size: 1rem; line-height: 1.5; margin-bottom: 1rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: transparent;
+      border: 2px solid #fff;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+      margin-top: auto;
+    }
+    .btn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* Section Logo */
     .section-logo {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+      margin: 3rem 0 1rem;
       color: #fff;
-      margin: 2rem 0;
+      letter-spacing: 0.1em;
     }
     .section-logo::before,
     .section-logo::after {
       content: '';
       flex: 1;
       height: 1px;
-      background: #888;
+      background: #666;
       margin: 0 1rem;
     }
-    .section-logo__letter { display: inline-block; }
-    .section-logo__p    { color: #dc2626; /* red P’s */ }
-    .section-logo__4    { color: #000;    /* black 4 */ }
+    .section-logo .p { color: #dc2626; }
+    .section-logo .four { color: #000; background: #fff; padding: 0 0.25rem; border-radius: 2px; }
+
+    /* Footer */
+    .site-footer {
+      background: #000;
+      padding: 1rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav-links { display: none; position: absolute; top: 60px; right: 0; background: #000; flex-direction: column; width: 200px; }
+      .nav-links.active { display: flex; }
+    }
   </style>
 </head>
 <body>
-
   <!-- NAVBAR -->
   <header class="header">
     <nav class="navbar">
-      <div class="nav-container">
-        <div class="nav-logo">
-          <a href="index.html"><img src="p4p.png" alt="P4P Coaching Logo"/></a>
-        </div>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" class="active-link">Coaching</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="consultation.html">Consultation</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </div>
+      <div class="nav-logo">
+        <a href="index.html"><img src="p4p.png" alt="P4P Logo"/></a>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active-link">Coaching</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="consultation.html">Consultation</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
       </div>
     </nav>
   </header>
-  <!-- END NAVBAR -->
 
   <!-- TEAM / COACHING SECTION -->
   <section class="team-section">
-    <h2 class="section-logo">
-      <span class="section-logo__letter section-logo__p">P</span>ound
-      <span class="section-logo__letter section-logo__4">4</span>
-      <span class="section-logo__letter section-logo__p">P</span>ound
-    </h2>
+    <h2 class="section-title">Our Team</h2>
     <div class="team-container">
-
-      <!-- Joe Borenstein -->
-      <article class="team-card">
-        <img src="Joe Worlds.jpg" alt="Joe Borenstein" class="team-photo"/>
-        <h3 class="team-name">Joe Borenstein</h3>
-        <p class="team-bio">
-          Joe is the founder of P4P Coaching and the first tested 83 kg lifter to total over 900 kg.
-          With a Kinesiology degree from UCF, he launched P4P in 2022 to fuse science-backed
-          programming and clear communication.
-        </p>
-        <a href="joe.html" class="btn">Learn More</a>
-      </article>
-
-      <!-- Philip Truong -->
-      <article class="team-card">
-        <img src="phil.jpg" alt="Philip Truong" class="team-photo"/>
-        <h3 class="team-name">Philip Truong</h3>
-        <p class="team-bio">
-          Phil has been coaching alongside Joe for 5+ years, specializing in technique refinement
-          and programming for powerlifting athletes from first meet to world level. He holds a degree
-          in Sport Management with a minor in Business, combining academic insight with years of
-          real-world application.
-        </p>
-        <a href="phil.html" class="btn">Learn More</a>
-      </article>
-
+      <!-- Joe -->
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('Joe Worlds.jpg');"></div>
+        <div class="team-content">
+          <h3 class="team-name">Joe Borenstein</h3>
+          <p class="team-bio">
+            Joe is the founder of P4P Coaching and the first tested 83 kg lifter to total over 900 kg. With a Kinesiology degree from UCF, he launched P4P in 2022 to fuse science-backed programming and clear communication.
+          </p>
+          <a href="joe.html" class="btn">Learn More</a>
+        </div>
+      </div>
+      <!-- Phil -->
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('phil.jpg');"></div>
+        <div class="team-content">
+          <h3 class="team-name">Philip Truong</h3>
+          <p class="team-bio">
+            Phil has been coaching alongside Joe for 5+ years, specializing in technique refinement and programming for powerlifting athletes from first meet to world level. He holds a Sport Management degree with a Business minor.
+          </p>
+          <a href="phil.html" class="btn">Learn More</a>
+        </div>
+      </div>
     </div>
+
+    <!-- Pound 4 Pound Logo -->
+    <h2 class="section-logo">
+      <span class="p">P</span>ound
+      <span class="four">4</span>
+      <span class="p">P</span>ound
+    </h2>
   </section>
-  <!-- END TEAM SECTION -->
 
   <!-- FOOTER -->
   <footer class="site-footer">
     <p>&copy; <span id="year"></span> P4P Coaching. All Rights Reserved.</p>
   </footer>
 
-  <!-- SCRIPTS -->
+  <!-- Scripts -->
   <script>
-    /* dynamic year */
     document.getElementById('year').textContent = new Date().getFullYear();
-    /* mobile nav toggle */
     const hamburger = document.getElementById('hamburger'),
           navLinks  = document.getElementById('nav-links');
     hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
