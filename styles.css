@@ -828,6 +828,7 @@ a:hover {
   transform-style: preserve-3d;
   animation: floatCard 6s ease-in-out infinite;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  margin-bottom:-9rem;
 }
 .team-card:hover {
   transform: translateY(-15px) rotateX(6deg) rotateY(-6deg);
