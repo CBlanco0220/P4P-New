@@ -771,72 +771,7 @@ a:hover {
 
 
 
-/* ---- Team Section ---- */
-.team-section {
-  padding: 4rem 1rem;
-  text-align: center;
-}
 
-.section-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
-
-.team-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.team-card {
-  background: #222;
-  color: #fff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.team-photo {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-  object-fit: cover;
-}
-
-.team-name {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  margin: 0.5rem 0;
-}
-
-.team-bio {
-  flex-grow: 1;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
-}
-
-/* Learn More button */
-.btn {
-  text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  padding: 0.6rem 1.2rem;
-  border: 2px solid #fff;
-  border-radius: 4px;
-  transition: background  0.2s, color 0.2s;
-}
-
-.btn:hover {
-  background: #fff;
-  color: #222;
-}
 
 /* ─── Team Section (LARGER CARDS + COOL EFFECTS + Zoom-Out) ─── */
 
@@ -948,3 +883,4 @@ a:hover {
   color: #000;
   box-shadow: 0 0 25px rgba(0,0,0,0.3);
 }
+
