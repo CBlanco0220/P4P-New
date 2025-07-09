@@ -17,7 +17,8 @@
       color: #fff;
       overflow-x: hidden;
     }
-    /* Navbar */
+
+    /* NAVBAR */
     .header {
       position: fixed;
       top: 0;
@@ -26,15 +27,29 @@
       z-index: 999;
     }
     .navbar {
+      position: relative;
       max-width: 1200px;
+      height: 60px;
       margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between; /* center logo + links */
-      padding: 1rem;
     }
-    .nav-logo img { height: 40px; }
+    .nav-container {
+      position: relative;
+      height: 100%;
+    }
+    .nav-logo {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .nav-logo img {
+      height: 40px;
+    }
     .nav-links {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
       list-style: none;
       display: flex;
       gap: 1.5rem;
@@ -47,15 +62,19 @@
       border-radius: 4px;
       transition: background 0.2s;
     }
-    .nav-links a.active-link,
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .nav-links a.active-link {
       background: #dc2626;
     }
     .hamburger {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
       display: none;
-      cursor: pointer;
       flex-direction: column;
       gap: 4px;
+      cursor: pointer;
     }
     .hamburger .bar {
       width: 25px;
@@ -63,9 +82,9 @@
       background: #fff;
     }
 
-    /* Team Section */
+    /* TEAM SECTION */
     .team-section {
-      padding: 100px 1rem 2rem;  /* clear fixed navbar */
+      padding: 100px 1rem 2rem;
       background: #000;
       text-align: center;
     }
@@ -136,7 +155,7 @@
       color: #000;
     }
 
-    /* Section Logo */
+    /* POUND 4 POUND LOGO */
     .section-logo {
       display: flex;
       align-items: center;
@@ -163,7 +182,7 @@
       border-radius: 2px;
     }
 
-    /* Footer */
+    /* FOOTER */
     .site-footer {
       background: #000;
       padding: 1rem 0;
@@ -173,7 +192,7 @@
       margin-top: 1rem;
     }
 
-    /* Responsive */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       .hamburger { display: flex; }
       .nav-links {
@@ -184,6 +203,7 @@
         background: #000;
         flex-direction: column;
         width: 200px;
+        padding: 1rem 0;
       }
       .nav-links.active { display: flex; }
     }
@@ -193,19 +213,21 @@
   <!-- NAVBAR -->
   <header class="header">
     <nav class="navbar">
-      <div class="nav-logo">
-        <a href="index.html"><img src="p4p.png" alt="P4P Logo"/></a>
-      </div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active-link">Coaching</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="consultation.html">Consultation</a></li>
-      </ul>
-      <div class="hamburger" id="hamburger">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="index.html"><img src="p4p.png" alt="P4P Logo"/></a>
+        </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active-link">Coaching</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="consultation.html">Consultation</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
       </div>
     </nav>
   </header>
@@ -214,7 +236,7 @@
   <section class="team-section">
     <h2 class="section-title">Our Team</h2>
     <div class="team-container">
-      <!-- Joe -->
+      <!-- Joe Borenstein -->
       <div class="team-card">
         <div class="team-photo" style="background-image:url('Joe Worlds.jpg');"></div>
         <div class="team-content">
@@ -225,7 +247,7 @@
           <a href="joe.html" class="btn">Learn More</a>
         </div>
       </div>
-      <!-- Phil -->
+      <!-- Philip Truong -->
       <div class="team-card">
         <div class="team-photo" style="background-image:url('phil.jpg');"></div>
         <div class="team-content">
