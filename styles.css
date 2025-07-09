@@ -164,7 +164,7 @@ a:hover {
   justify-content: center;
 }
 
-/* WHY P4P SECTION */
+
 /* WHY P4P SECTION */
 .why-p4p-section {
   position: relative;
@@ -778,7 +778,7 @@ a:hover {
 /* make sure the team section sits below the fixed navbar */
 @media (max-width: 768px) {
   .team-section {
-    margin-top: 60px;    /* height of your header */
+    margin-top: 100px;    /* height of your header */
     padding-top: 1rem;   /* optional extra breathing room */
   }
 }
