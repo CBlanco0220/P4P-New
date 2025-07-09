@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>P4P Coaching – Home</title>
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,28 +12,64 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
     rel="stylesheet"
   />
+
   <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Overrides for WHY P4P parallax + blur -->
+  <style>
+    /* DESKTOP: fixed background for parallax */
+    .why-p4p-section {
+      background: url('him.png') center center / cover no-repeat fixed;
+    }
+    /* MOBILE: disable fixed to avoid grey fallback */
+    @media (max-width: 768px) {
+      .why-p4p-section {
+        background-attachment: scroll !important;
+      }
+    }
+    /* Overlay blur styling */
+    .why-p4p-overlay {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1rem;
+    }
+    .why-p4p-content {
+      
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      border-radius: 8px;
+      padding: 3rem 2rem;
+      max-width: 800px;
+      color: #fff;
+      text-align: center;
+    }
+    .why-p4p-content h2 {
+      color: #dc2626;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+    .why-p4p-content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body>
   <!-- NAVBAR -->
   <header class="header">
     <nav class="navbar">
       <div class="nav-container">
-        <!-- Logo (pinned left) -->
         <div class="nav-logo">
-          <a href="index.html">
-            <img src="p4p.png" alt="P4P Coaching Logo" />
-          </a>
+          <a href="index.html"><img src="p4p.png" alt="P4P Coaching Logo"/></a>
         </div>
-        <!-- Desktop Nav Links -->
         <ul class="nav-links" id="nav-links">
           <li><a href="index.html" class="active-link">Home</a></li>
           <li><a href="about.html">Coaching</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="consultation.html">Consultation</a></li>
         </ul>
-        <!-- Hamburger Icon (mobile) -->
         <div class="hamburger" id="hamburger">
           <div class="bar"></div>
           <div class="bar"></div>
@@ -43,10 +80,10 @@
   </header>
   <!-- END NAVBAR -->
 
-  <!-- HERO SECTION (VIDEO ONLY) -->
+  <!-- HERO SECTION -->
   <section id="hero" class="hero-section">
     <video autoplay muted loop playsinline class="hero-video">
-      <source src="hero-deadlift.mp4" type="video/mp4" />
+      <source src="hero-deadlift.mp4" type="video/mp4"/>
       Your browser does not support the video tag.
     </video>
     <div class="hero-overlay">
@@ -54,7 +91,9 @@
         <h1>Push Beyond Your Limits</h1>
         <p>Pound4Pound Coaching – Elevate Your Performance</p>
         <div class="hero-buttons">
-          <a href="https://forms.gle/6qiafYHgsgvwHdZM8" class="btn btn-primary">Maximize Your Potential</a>
+          <a href="https://forms.gle/6qiafYHgsgvwHdZM8" class="btn btn-primary">
+            Maximize Your Potential
+          </a>
         </div>
       </div>
     </div>
@@ -67,11 +106,11 @@
       <div class="why-p4p-content fade-observe">
         <h2>Why P4P Coaching?</h2>
         <p>
-          At P4P Coaching, we train lifters to defy limits — both physical and mental. Whether you're new to powerlifting or chasing elite totals, our science-based coaching helps you break through plateaus, dial in your nutrition, and reach your highest potential.
-
-          Chasing that next PR? We’ll help you get there.
-
-
+          At P4P Coaching, we train lifters to defy limits — both physical and mental.
+          Whether you're new to powerlifting or chasing elite totals, our science-based
+          coaching helps you break through plateaus, dial in your nutrition, and reach
+          your highest potential.
+        </p>
         <p>Ready to power through your next PR?</p>
       </div>
     </div>
@@ -83,10 +122,9 @@
     <div class="athletes-container fade-observe">
       <h2>Book a 1-ON-1</h2>
       <p>
-        Got questions? Need guidance?
-
-        This 30-minute consultation is your chance to talk directly with Joe or Phil — no waiting, no guessing. Whether you're stuck on programming, planning your next meet, or just want pro insight, this is your time.
-
+        Got questions? Need guidance? This 30-minute consultation is your chance to talk
+        directly with Joe or Phil — no waiting, no guessing. Whether you're stuck on
+        programming, planning your next meet, or just want pro insight, this is your time.
         Spots are limited — secure your call now.
       </p>
       <a href="consultation.html" class="btn btn-outline">Book a 1-ON-1</a>
@@ -103,38 +141,24 @@
   <!-- JavaScript -->
   <script>
     // Dynamic year
-    const yearSpan = document.getElementById('year');
-    if (yearSpan) {
-      yearSpan.textContent = new Date().getFullYear();
-    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+
     // Mobile nav toggle
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    if (hamburger) {
-      hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-      });
-    }
+    const hamburger = document.getElementById('hamburger'),
+          navLinks  = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        entry.target.classList.toggle('fade-in', entry.isIntersecting);
+        entry.target.classList.toggle('fade-out', !entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.fade-observe').forEach(el => observer.observe(el));
   </script>
-
-<script>
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      const el = entry.target;
-      if (entry.isIntersecting) {
-        el.classList.add('fade-in');
-        el.classList.remove('fade-out');
-      } else {
-        el.classList.remove('fade-in');
-        el.classList.add('fade-out');
-      }
-    },
-    { threshold: 0.1 }
-  );
-
-  document.querySelectorAll('.fade-observe').forEach(el => observer.observe(el));
-</script>
-
-
 </body>
 </html>
