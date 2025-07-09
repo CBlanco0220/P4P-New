@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>P4P Coaching – Services</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="index.html">
+            <img src="p4p.png" alt="P4P Coaching Logo"/>
+          </a>
+        </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Coaching</a></li>
+          <li><a href="services.html" class="active-link">Services</a></li>
+          <li><a href="consultation.html">Consultation</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- SERVICES PAGE -->
+  <section class="services-page">
+    <div class="services-container">
+
+      <!-- HEADER now holds the three P4P plans -->
+      <div class="services-header">
+        <h2>Coaching Packages</h2>
+        <p>
+          Tailored plans for every lifter — from novices to elite athletes.
+          See which package fits your goals best.
+        </p>
+        <hr style="margin-bottom: 3rem;">
+
+        <!-- three plan-cards moved here -->
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>P4P Standard</h3>
+            <p>
+              Get a customized powerlifting program plus one monthly phone call with Coach Joe.
+              Perfect for those who want a structured plan with occasional guidance.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <h3>P4P Plus</h3>
+            <p>
+              Personalized program plus daily communication (24-hour response time) — no monthly call.
+              Great for consistent feedback without scheduling phone calls.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <h3>P4P Premium</h3>
+            <p>
+              Tailored program, daily communication, and one monthly call.
+              This plan is tailored for those who want maximum guidance to push their limits
+              and unlock their full potential!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONSULTATION now lives down here -->
+      <div class="services-grid">
+        <div class="service-card consultation-card">
+          <h3>30-Min Consultation</h3>
+          <p>
+            Got questions? Need guidance? This 30-minute consultation is your
+            chance to talk directly with Joe — no waiting, no guessing.
+            Whether you're stuck on programming, planning your next meet,
+            or just want pro insight, this is your time. Spots are limited —
+            secure your call now.
+          </p>
+          <a href="consultation.html" class="btn btn-primary">Book Now</a>
+        </div>
+      </div>
+
+      <div class="coaching-form-link">
+        <p>Ready to sign up?</p>
+        <a
+          href="https://forms.gle/6qiafYHgsgvwHdZM8"
+          target="_blank"
+          class="btn btn-primary"
+        >
+          Client Info
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> P4P Coaching. All Rights Reserved.</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // mobile nav toggle
+    const hamburger = document.getElementById('hamburger'),
+          navLinks  = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+  </script>
+</body>
+</html>

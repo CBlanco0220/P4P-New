@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>P4P Coaching – Consultation</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles.css"/>
+
+  <style>
+    .consultation-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .consultation-buttons .btn {
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+    }
+    .consultation-divider {
+      margin: 2rem auto;
+      width: 80%;
+      border-color: rgba(255,255,255,0.5);
+    }
+    .consult-image-container {
+      text-align: center;
+      margin: 2rem auto;
+    }
+    .consult-image {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body class="consultation-body">
+
+  <!-- NAVBAR -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="index.html"><img src="p4p.png" alt="P4P Coaching Logo"/></a>
+        </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Coaching</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="consultation.html" class="active-link">Consultation</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CONSULTATION PAGE -->
+  <section class="consultation-page">
+    <div class="consultation-header">
+      <h2>Book a Consultation Call</h2>
+      <p>
+        Ready to talk strategy? Choose a coach below and pick your 30-minute slot.
+      </p>
+
+      <div class="consultation-buttons">
+        <a href="https://calendly.com/joe23900/30min"
+           class="btn btn-primary"
+           target="_blank"
+           rel="noopener">
+          Book with Joe
+        </a>
+        <a href="https://calendly.com/joe23900/phil-paid-30-minute-meeting"
+           class="btn btn-primary"
+           target="_blank"
+           rel="noopener">
+          Book with Phil
+        </a>
+      </div>
+
+      <hr class="consultation-divider"/>
+
+      <div class="consult-image-container">
+        <img src="consult.jpg" alt="Consultation Promo" class="consult-image"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> P4P Coaching. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // mobile nav toggle
+    const hamburger = document.getElementById('hamburger'),
+          navLinks  = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+  </script>
+</body>
+</html>

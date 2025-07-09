@@ -1,0 +1,950 @@
+/* GLOBAL RESET & BASE FONT */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  font-family: 'Montserrat', sans-serif;
+  color: #000;
+  line-height: 1.5;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+/* LINKS & BUTTONS */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+a:hover {
+  opacity: 0.8;
+}
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s ease-in-out;
+}
+.btn-primary {
+  background-color: #dc2626;
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #b91c1c;
+  transform: scale(1.02);
+}
+.btn-outline {
+  color: #dc2626;
+  border: 2px solid #dc2626;
+}
+.btn-outline:hover {
+  background-color: #dc2626;
+  color: #fff;
+}
+
+/* NAVBAR */
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+.navbar {
+  background-color: #000;
+  padding: 1.5rem 0rem;
+}
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center all children (logo + nav) */
+  position: relative;
+
+}
+.nav-logo {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0;
+  margin: 0;
+}
+.nav-logo img {
+  height: 40px;
+  display: block;
+  margin-left: -240px; /* pull the image even more left */
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+.nav-links li a {
+  color: #fff;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.nav-links li a:hover,
+.nav-links li a.active-link {
+  background-color: #dc2626;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.hamburger .bar {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* HERO SECTION */
+.hero-section {
+  position: relative;
+  /* instead of min‑height:110vh; */
+  height: calc(100vh - 60px);   /* full viewport minus your 60px navbar */
+  margin-top: 60px;             /* push under the fixed header */
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+ 
+  z-index: -0;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+}
+.hero-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  padding: 0 1rem;
+}
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+.hero-content p {
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* WHY P4P SECTION */
+/* WHY P4P SECTION */
+.why-p4p-section {
+  position: relative;
+  background: url('him.png') center center / cover no-repeat fixed;
+  padding: 3rem 1rem 2rem;
+}
+
+.why-p4p-overlay {
+  background: rgba(0, 0, 0, 0.0);
+  width: 100%;
+  min-height: 100%;
+  padding: 3rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-p4p-content {
+  max-width: 800px;
+  text-align: center;
+  color: #fff;
+}
+
+.why-p4p-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #dc2626;
+}
+
+.why-p4p-content p {
+  font-size: 1.1rem;
+  margin-bottom: 7rem;
+  color: #eee;
+}
+
+/* OPTIMIZATION FOR MOBILE */
+@media (max-width: 768px) {
+  .why-p4p-section {
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .why-p4p-overlay {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .why-p4p-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .why-p4p-content p {
+    font-size: 1rem;
+  }
+}
+
+/* CURRENT ATHLETES SECTION */
+.current-athletes-section {
+  background: linear-gradient(120deg, #dc2626 15%, #000 100%);
+  padding: 2rem 1rem 2rem;
+  text-align: center;
+  color: #fff;
+}
+.athletes-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.current-athletes-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.current-athletes-section p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.5;
+}
+.current-athletes-section .btn {
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: transform 0.3s, background-color 0.3s;
+}
+.current-athletes-section .btn:hover {
+  background-color: #fff;
+  color: #dc2626;
+  transform: scale(1.03);
+}
+
+/* ABOUT PAGE */
+/* ─────────── ABOUT  PAGE  (revamp) ─────────── */
+.about-section{
+  background:linear-gradient(135deg,#090909 10%,#630000 45%,#dc2626 100%);
+  color:#fff;
+  padding:6rem 1rem 8rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.about-container{
+  max-width:1200px;
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:2.5rem;
+  align-items:center;
+}
+
+.about-image{position:relative;perspective:1000px;}
+.about-image img{
+  width:100%;
+  border-radius:12px;
+  box-shadow:0 20px 40px rgba(0,0,0,.35);
+  transition:.35s ease;
+}
+.about-image:hover img{
+  transform:rotateY(7deg) rotateX(3deg) scale(1.05);
+}
+
+
+.about-content{
+  backdrop-filter:blur(4px);
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:12px;
+  padding:2rem 2.5rem;
+  animation:fadeInUp .9s ease both;
+}
+.about-content h2{
+  font-size:2.25rem;
+  color:#ff5040;
+  letter-spacing:.5px;
+  margin-bottom:1rem;
+  text-transform:uppercase;
+}
+.about-content p{margin-bottom:1.1rem;line-height:1.7;}
+.about-content h3{
+  margin:1.5rem 0 .8rem;
+  font-weight:700;
+  color:#ff5040;
+  text-transform:uppercase;
+  letter-spacing:.6px;
+}
+.about-content ul{list-style:disc inside;margin-left:.5rem;}
+
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* Mobile tweaks */
+@media(max-width:768px){
+  .about-section{padding:5rem 1rem 6rem;}
+  .about-content{padding:1.5rem 1.75rem;}
+  .about-image img:nth-child(2){display:none;}
+}
+
+ /* ─────────────── SERVICES PAGE ─────────────── */
+
+/* Hero banner */
+.services-hero {
+  background: url('joe-services.jpg') center center / cover no-repeat;
+  height: 45vh;                /* slimmed header */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.services-hero-overlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.75),
+    rgba(220, 38, 38, 0.4)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-hero-overlay h1 {
+  color: #fff;
+  font-size: 2rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* Main packages section */
+.services-page {
+  padding: 6rem 2rem;
+  background: linear-gradient(
+    to bottom right,
+    #000 0%,
+    #2f2f2f 50%,
+    #dc2626 100%
+  );
+  color: #fff;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin:  auto;
+  text-align: center;
+}
+
+.services-header {
+  margin-bottom: 1rem;
+}
+
+.services-header h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #dc2626;
+}
+
+.services-header p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+/* Grid of cards */
+/* ─── Consultation Call Square ─── */
+.consultation-card {
+  background: #fff;
+  border: 2px solid #dc2626;
+  color: #000;
+  border-radius: 1000px;
+  padding: 2rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  
+}
+
+.consultation-card:hover {
+  
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.consultation-card h3 {
+  color: #dc2626;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  
+}
+
+.consultation-card p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  
+}
+
+.service-card {
+  background: #fff;
+  color: #000;
+  border-radius: 10px;
+  padding: 2rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  border: 2px solid #dc2626;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: rem;
+  color: #dc2626;
+}
+
+.service-card p {
+  margin-bottom: rem;
+  color: #333;
+}
+
+/* “Ready to sign‑up” link */
+.coaching-form-link {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.coaching-form-link p {
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+/* Responsive breakpoints */
+@media (min-width: 600px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* CONSULTATION PAGE */
+
+/* consultation section divider */
+.consultation-divider {
+  width: 100%;
+  max-width: 2400px;
+  margin: 1.5rem auto;
+  border: 0;
+  border-top: 1px solid rgb(250, 247, 247)
+}
+
+
+
+  .consultation-header p {
+    font-size: 1rem;
+    line-height: 1.4;
+    padding: 0 1rem;
+  }
+  .consultation-divider {
+    max-width: 80%;
+  }
+  .calendly-container {
+    padding: 0 1rem;
+  }
+
+
+
+.consultation-page {
+  padding-top: calc(60px + 2rem);
+}
+.consultation-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.consultation-header h2 {
+  font-size: 2rem;
+  color: #dc2626;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.consultation-header p {
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+  font-size: 1.1rem;
+}
+.booking-form {
+  background: #fff;
+  color: #000;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  margin-top: 1.5rem;
+}
+.booking-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #111;
+}
+.booking-form input,
+.booking-form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.booking-form input:focus,
+.booking-form textarea:focus {
+  outline: 2px solid #dc2626;
+  border-color: #dc2626;
+}
+.booking-form button {
+  width: 100%;
+  background: #dc2626;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.booking-form button:hover {
+  background: #b91c1c;
+  transform: scale(1.02);
+}
+
+/* FOOTER */
+.site-footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #000;
+    flex-direction: column;
+    width: 200px;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+    box-shadow: -3px 0 6px rgba(0,0,0,0.2);
+    gap: 0;
+  }
+  .nav-links li a {
+    display: block;
+    padding: 0.75rem 1rem;
+  }
+  .nav-links.active {
+    transform: translateX(0);
+  }
+  .hamburger {
+    display: flex;
+  }
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+@media (min-width: 600px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Example: black+red gradient background on consultation page */
+.consultation-body {
+  background: linear-gradient(135deg, #111 10%, #dc2626 90%);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.consultation-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.consultation-header h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #dc2626;
+  text-transform: uppercase;
+}
+
+
+
+.calendly-container {
+  /* center container horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin: 2rem auto;
+}
+
+/* Force a square shape on desktop */
+.calendly-square {
+  width: 600px;
+  height: 600px; 
+  /* fallback if screen is big enough */
+  border-radius: 10px; /* optional, for rounding corners */
+  overflow: hidden;
+}
+
+/* RESPONSIVE: on smaller screens, let it shrink instead of forcing overflow */
+@media (max-width: 700px) {
+  .calendly-square {
+    width: 90vw;  /* 90% of the viewport width */
+    height: 90vw; /* same, so it remains square */
+    max-width: 600px;
+    max-height: 600px;
+  }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(20px); }
+}
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+.fade-out {
+  animation: fadeOut 0.5s ease forwards;
+  opacity: 1;
+}
+
+/* Optional subtle border or glow for better visibility */
+.why-p4p-content {
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(7px);
+}
+
+/* More visible overlay on phones */
+@media (max-width: 768px) {
+  .why-p4p-overlay {
+    background: rgba(0, 0, 0, 0.6); /* darker overlay for visibility */
+  }
+}
+
+/*──────────────────  MOBILE OPTIMIZATIONS  ──────────────────*/
+@media (max-width: 768px) {
+  /* NAV */
+  .nav-container { padding: 0 1rem; }
+  .nav-logo { left: .5rem; }
+  
+  /* HERO */
+  .hero-section { min-height: 60vh; }
+  .hero-content h1 { font-size: 2rem; }
+  .hero-content p   { font-size: 1rem; margin-bottom: 1.5rem; }
+  
+  /* WHY P4P */
+  .why-p4p-section {
+    padding: 2rem .5rem 1rem !important;
+    background-position: top center !important;
+  }
+  .why-p4p-content p { margin-bottom: 2.5rem !important; }
+  
+  /* CURRENT ATHLETES */
+  .current-athletes-section { padding: 1.5rem .5rem !important; }
+  .current-athletes-section h2 { font-size: 1.5rem; }
+  .current-athletes-section p  { font-size: 1rem; }
+  
+  /* ABOUT */
+  .about-section { padding: 4rem 1rem 6rem !important; }
+  .about-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+  .about-image img { max-width: 90vw; }
+  .about-content {
+    padding: 1.5rem 1rem !important;
+    backdrop-filter: none !important;
+  }
+  
+  /* SERVICES */
+  .services-hero { height: 30vh !important; }
+  .services-page {
+    padding: 4rem 1rem !important;
+    background-position: center top !important;
+  }
+  .services-page::before {
+    background-position: top center !important;
+  }
+  .services-grid { margin-top: 3rem !important; }
+  .service-card {
+    padding: 1.5rem !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15) !important;
+  }
+}
+/* make the single consultation-card span the entire row */
+.services-page .services-grid:nth-of-type(2) {
+  display: grid;
+  /* if you want it centered & full-width: */
+  grid-template-columns: 1fr;
+}
+
+
+
+/* ---- Team Section ---- */
+.team-section {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-card {
+  background: #222;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.team-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.team-bio {
+  flex-grow: 1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* Learn More button */
+.btn {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  transition: background  0.2s, color 0.2s;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #222;
+}
+
+/* ─── Team Section (LARGER CARDS + COOL EFFECTS + Zoom-Out) ─── */
+
+/* 1) Float animation for entire card */
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+/* SECTION WRAPPER */
+.team-section {
+  background: #fff;
+  padding: 4rem 1rem;
+  text-align: center;
+  /* zoom the whole section out a bit more */
+  transform: scale(0.85);
+  transform-origin: top center;
+}
+
+/* SHIMMERING TITLE */
+
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  background: linear-gradient(90deg, #000, #555, #000);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: floatCard 8s ease-in-out infinite reverse;
+  margin-bottom: 2.5rem;
+}
+/* GRID: fewer, wider columns */
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2.5rem;
+  align-items: stretch;        /* equal height cards */
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* CARD STYLES */
+.team-card {
+  background: #000;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  animation: floatCard 6s ease-in-out infinite;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.team-card:hover {
+  transform: translateY(-15px) rotateX(6deg) rotateY(-6deg);
+  box-shadow:
+    0 28px 40px rgba(0,0,0,0.4),
+    0 0 28px rgba(0,0,0,0.25);
+  z-index: 1;
+}
+.team-card * {
+  transform-style: preserve-3d;
+}
+
+/* IMAGE: allow more of each photo to show */
+.team-photo {
+  width: 100%;
+  height: auto;
+  max-height: 650px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.6s ease;
+}
+.team-card:hover .team-photo {
+  transform: scale(1.08);
+}
+
+/* NAME */
+.team-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* BIO */
+.team-bio {
+  flex-grow: 1;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* BUTTON */
+.team-card .btn {
+  margin-top: auto;
+  padding: 1rem 2rem;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 1.1rem;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+.team-card .btn:hover {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 25px rgba(0,0,0,0.3);
+}

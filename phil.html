@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Philip Truong – Coach</title>
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="styles.css"/>
+
+  <!-- Page-specific CSS -->
+  <style>
+    .about-section {
+      background: linear-gradient(135deg, #200808 0%, #700000 50%, #dc2626 100%);
+      padding: 4rem 2rem;
+    }
+    .about-container {
+      display: grid;
+      grid-template-columns: 3fr 4fr;
+      gap: 2rem;
+      align-items: stretch;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .about-image {
+      justify-self: center;
+    }
+    .about-image img {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: rgba(0,0,0,0.6);
+      padding: 3rem;
+      border-radius: 12px;
+      backdrop-filter: blur(4px);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      height: 100%;
+    }
+    .about-content h2 {
+      color: #ff5040;
+      font-size: 2.75rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .about-content p {
+      margin-bottom: 1rem;
+    }
+    .about-content h3 {
+      color: #ff5040;
+      margin: 2.5rem 0 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .about-content ul {
+      list-style: disc inside;
+      margin-left: 1rem;
+      margin-bottom: 2rem;
+    }
+    /* Packages pricing */
+    .pricing-grid {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .pricing-card {
+      flex: 1;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .pricing-card h4 {
+      margin-bottom: 0.5rem;
+      color: #fff;
+      font-size: 1.1rem;
+    }
+    .pricing-card p {
+      font-size: 1rem;
+      color: #fff;
+      font-weight: 600;
+    }
+    /* Consultation call fee */
+    .consult-fee {
+      font-size: 1.15rem;
+      background: rgba(255,255,255,0.1);
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .consult-fee strong {
+      color: #ff5040;
+    }
+    .site-footer {
+      background: #000;
+      text-align: center;
+      padding: 1rem;
+      color: #777;
+    }
+    @media (max-width: 1024px) {
+      .about-container {
+        grid-template-columns: 1fr;
+      }
+      .about-content {
+        height: auto;
+      }
+      .about-image img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="index.html"><img src="p4p.png" alt="P4P Coaching Logo"/></a>
+        </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active-link">Coaching</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="consultation.html">Consultation</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- PHILIP TRUONG PROFILE -->
+  <section class="about-section">
+    <div class="about-container">
+
+      <div class="about-image">
+        <img src="phil-coach.jpg" alt="Philip Truong coaching photo"/>
+      </div>
+
+      <div class="about-content">
+        <div>
+          <h2>About Philip Truong</h2>
+          <p>Phil Truong is a full-time powerlifting coach and competitive lifter based in Orlando, FL. With an 815&nbsp;kg total at 93&nbsp;kg, a 519 DOTS score, and 106 IPF GL points, he brings elite-level experience both on the platform and behind the scenes as a coach.</p>
+          <p>He holds a degree in Sport Management with a minor in Business, combining academic insight with years of real-world application. With over 7 years of competitive experience and 5+ years coaching lifters from their first meet to the world stage, he’s helped athletes break personal records, earn podium finishes, and build lasting confidence through training.</p>
+          <p>Known for his communication and attention to detail, Coach Phil keeps lifters focused, informed, and progressing with purpose — all while creating an environment where athletes believe in their potential both on and off the platform.</p>
+
+          <h3>Accomplishments</h3>
+          <ul>
+            <li>815&nbsp;kg total at 93&nbsp;kg (519 DOTS | 106 IPF GL)</li>
+            <li>4× NAPF Gold Medalist</li>
+            <li>7+ years competitive powerlifting experience</li>
+            <li>5+ years coaching experience from first meet to world level</li>
+            <li>Degree in Sport Management, Minor in Business</li>
+            <li>Coached athletes to national podiums and international medals</li>
+            <li>Specializes in technical refinement, injury management, and sustainable progression</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Pricing</h3>
+          <div class="pricing-grid">
+            <div class="pricing-card">
+              <h4>P4P Standard</h4>
+              <p>$135 / month</p>
+            </div>
+            <div class="pricing-card">
+              <h4>P4P Plus</h4>
+              <p>$170 / month</p>
+            </div>
+            <div class="pricing-card">
+              <h4>P4P Premium</h4>
+              <p>$190 / month</p>
+            </div>
+          </div>
+
+          <div class="consult-fee">
+            <strong>Consultation Call:</strong> 30-minute session with Phil – <strong>$20</strong>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> P4P Coaching. All Rights Reserved.</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const hamburger = document.getElementById('hamburger'),
+          navLinks  = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+  </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>P4P Coaching – Coaching</title> <!-- changed title -->
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="index.html"><img src="p4p.png" alt="P4P Coaching Logo"/></a>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <!-- keep the file as about.html but relabel here -->
+          <li><a href="about.html" class="active-link">Coaching</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="consultation.html">Consultation</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- END NAVBAR -->
+
+
+  <!-- TEAM / COACHING SECTION -->
+  <section class="team-section">
+    <h2 class="section-title">Our Team</h2>
+    <div class="team-container">
+
+      <!-- Joe Borenstein -->
+      <article class="team-card">
+        <img src="Joe Worlds.jpg" alt="Joe Borenstein" class="team-photo"/>
+        <h3 class="team-name">Joe Borenstein</h3>
+        <p class="team-bio">
+          Joe is the founder of P4P Coaching and the first tested 83 kg lifter to total over 900 kg.
+          With a Kinesiology degree from UCF, he launched P4P in 2022 to fuse science-backed
+          programming and clear communication.
+        </p>
+        <!-- Learn More goes to joe.html -->
+        <a href="joe.html" class="btn">Learn More</a>
+      </article>
+
+      <!-- Phil -->
+      <article class="team-card">
+        <img src="phil.jpg" alt="Philip Truong" class="team-photo"/>
+        <h3 class="team-name">Philip Truong</h3>
+        <p class="team-bio">
+          Phil has been coaching alongside Joe for 3 years, specializing in technique refinement
+          and beginner programming.
+        </p>
+        <!-- Learn More goes to phil.html -->
+        <a href="phil.html" class="btn">Learn More</a>
+      </article>
+
+    </div>
+  </section>
+  <!-- END TEAM SECTION -->
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> P4P Coaching. All Rights Reserved.</p>
+  </footer>
+
+
+  <script>
+    /* dynamic year */
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* mobile nav */
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+  </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>P4P Coaching – Home</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="nav-container">
+        <!-- Logo (pinned left) -->
+        <div class="nav-logo">
+          <a href="index.html">
+            <img src="p4p.png" alt="P4P Coaching Logo" />
+          </a>
+        </div>
+        <!-- Desktop Nav Links -->
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" class="active-link">Home</a></li>
+          <li><a href="about.html">Coaching</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="consultation.html">Consultation</a></li>
+        </ul>
+        <!-- Hamburger Icon (mobile) -->
+        <div class="hamburger" id="hamburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- END NAVBAR -->
+
+  <!-- HERO SECTION (VIDEO ONLY) -->
+  <section id="hero" class="hero-section">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="hero-deadlift.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1>Push Beyond Your Limits</h1>
+        <p>Pound4Pound Coaching – Elevate Your Performance</p>
+        <div class="hero-buttons">
+          <a href="https://forms.gle/6qiafYHgsgvwHdZM8" class="btn btn-primary">Maximize Your Potential</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END HERO SECTION -->
+
+  <!-- WHY P4P SECTION -->
+  <section class="why-p4p-section">
+    <div class="why-p4p-overlay">
+      <div class="why-p4p-content fade-observe">
+        <h2>Why P4P Coaching?</h2>
+        <p>
+          At P4P Coaching, we train lifters to defy limits — both physical and mental. Whether you're new to powerlifting or chasing elite totals, our science-based coaching helps you break through plateaus, dial in your nutrition, and reach your highest potential.
+
+          Chasing that next PR? We’ll help you get there.
+
+
+        <p>Ready to power through your next PR?</p>
+      </div>
+    </div>
+  </section>
+  <!-- END WHY P4P SECTION -->
+
+  <!-- CURRENT ATHLETES SECTION -->
+  <section class="current-athletes-section">
+    <div class="athletes-container fade-observe">
+      <h2>Book a 1-ON-1</h2>
+      <p>
+        Got questions? Need guidance?
+
+        This 30-minute consultation is your chance to talk directly with Joe or phil — no waiting, no guessing. Whether you're stuck on programming, planning your next meet, or just want pro insight, this is your time.
+
+        Spots are limited — secure your call now.
+      </p>
+      <a href="consultation.html" class="btn btn-outline">Book a 1-ON-1</a>
+    </div>
+  </section>
+  <!-- END CURRENT ATHLETES SECTION -->
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> P4P Coaching. All Rights Reserved.</p>
+  </footer>
+  <!-- END FOOTER -->
+
+  <!-- JavaScript -->
+  <script>
+    // Dynamic year
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+    // Mobile nav toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+  </script>
+
+<script>
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      const el = entry.target;
+      if (entry.isIntersecting) {
+        el.classList.add('fade-in');
+        el.classList.remove('fade-out');
+      } else {
+        el.classList.remove('fade-in');
+        el.classList.add('fade-out');
+      }
+    },
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll('.fade-observe').forEach(el => observer.observe(el));
+</script>
+
+
+</body>
+</html>
