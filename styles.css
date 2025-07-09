@@ -775,6 +775,41 @@ a:hover {
 
 /* ─── Team Section (LARGER CARDS + COOL EFFECTS + Zoom-Out) ─── */
 
+.section-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+  margin: 2rem 0;
+}
+
+.section-logo::before,
+.section-logo::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #888;
+  margin: 0 1rem;
+}
+
+.section-logo__letter {
+  display: inline-block;
+}
+
+.section-logo__p {
+  color: #dc2626;  /* red P’s */
+}
+
+.section-logo__4 {
+  color: #000;     /* black 4 */
+}
+
+
 
 
 /* 1) Make the team section bleed full width and stay black */
