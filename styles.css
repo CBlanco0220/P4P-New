@@ -815,21 +815,21 @@ a:hover {
   max-width: 1400px;
   margin: auto;
 }
-
 @media (max-width: 768px) {
-  /* Force one-column layout with a gap */
+  /* stack team cards vertically and add breathing room */
   .team-container {
     display: grid !important;
     grid-template-columns: 1fr !important;
-    row-gap: 5rem;       /* space between each card */
-    padding: 0 1rem;     /* a little side padding so cards don’t touch the edges */
+    row-gap: 2rem;      /* space between each card */
+    padding: 0 1rem;    /* so they don’t touch the screen edges */
   }
 
-  /* Remove any bottom margin on the last card so you get exactly that 2rem gap */
+  /* remove any leftover bottom margin */
   .team-card {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
 }
+
 
 
 /* CARD STYLES */
