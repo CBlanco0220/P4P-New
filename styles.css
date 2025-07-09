@@ -775,6 +775,16 @@ a:hover {
 
 /* ─── Team Section (LARGER CARDS + COOL EFFECTS + Zoom-Out) ─── */
 
+@media (max-width: 768px) {
+  .team-photo {
+    /* force a 1:1 aspect ratio and crop */
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+
 /* 1) Make the team section bleed full width and stay black */
 .team-section {
   background: #000;
