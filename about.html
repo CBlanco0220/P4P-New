@@ -3,17 +3,46 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>P4P Coaching – Coaching</title> <!-- changed title -->
+  <title>P4P Coaching – Coaching</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css"/>
-</head>
 
+  <!-- Section logo styling -->
+  <style>
+    .section-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #fff;
+      margin: 2rem 0;
+    }
+    .section-logo::before,
+    .section-logo::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #888;
+      margin: 0 1rem;
+    }
+    .section-logo__letter { display: inline-block; }
+    .section-logo__p    { color: #dc2626; /* red P’s */ }
+    .section-logo__4    { color: #000;    /* black 4 */ }
+  </style>
+</head>
 <body>
 
   <!-- NAVBAR -->
@@ -23,15 +52,12 @@
         <div class="nav-logo">
           <a href="index.html"><img src="p4p.png" alt="P4P Coaching Logo"/></a>
         </div>
-
         <ul class="nav-links" id="nav-links">
           <li><a href="index.html">Home</a></li>
-          <!-- keep the file as about.html but relabel here -->
           <li><a href="about.html" class="active-link">Coaching</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="consultation.html">Consultation</a></li>
         </ul>
-
         <div class="hamburger" id="hamburger">
           <div class="bar"></div>
           <div class="bar"></div>
@@ -42,10 +68,13 @@
   </header>
   <!-- END NAVBAR -->
 
-
   <!-- TEAM / COACHING SECTION -->
   <section class="team-section">
-    <h2 class="section-title">Our Team</h2>
+    <h2 class="section-logo">
+      <span class="section-logo__letter section-logo__p">P</span>ound
+      <span class="section-logo__letter section-logo__4">4</span>
+      <span class="section-logo__letter section-logo__p">P</span>ound
+    </h2>
     <div class="team-container">
 
       <!-- Joe Borenstein -->
@@ -57,19 +86,19 @@
           With a Kinesiology degree from UCF, he launched P4P in 2022 to fuse science-backed
           programming and clear communication.
         </p>
-        <!-- Learn More goes to joe.html -->
         <a href="joe.html" class="btn">Learn More</a>
       </article>
 
-      <!-- Phil -->
+      <!-- Philip Truong -->
       <article class="team-card">
         <img src="phil.jpg" alt="Philip Truong" class="team-photo"/>
         <h3 class="team-name">Philip Truong</h3>
         <p class="team-bio">
           Phil has been coaching alongside Joe for 5+ years, specializing in technique refinement
-          and programming for powerlifting athletes from first meet to world level. He holds a degree in Sport Management with a minor in Business, combining academic insight with years of real-world application. 
+          and programming for powerlifting athletes from first meet to world level. He holds a degree
+          in Sport Management with a minor in Business, combining academic insight with years of
+          real-world application.
         </p>
-        <!-- Learn More goes to phil.html -->
         <a href="phil.html" class="btn">Learn More</a>
       </article>
 
@@ -77,20 +106,18 @@
   </section>
   <!-- END TEAM SECTION -->
 
-
   <!-- FOOTER -->
   <footer class="site-footer">
     <p>&copy; <span id="year"></span> P4P Coaching. All Rights Reserved.</p>
   </footer>
 
-
+  <!-- SCRIPTS -->
   <script>
     /* dynamic year */
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    /* mobile nav */
-    const hamburger = document.getElementById('hamburger');
-    const navLinks  = document.getElementById('nav-links');
+    /* mobile nav toggle */
+    const hamburger = document.getElementById('hamburger'),
+          navLinks  = document.getElementById('nav-links');
     hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
   </script>
 </body>
