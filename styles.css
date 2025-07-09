@@ -775,6 +775,33 @@ a:hover {
 
 /* ─── Team Section (LARGER CARDS + COOL EFFECTS + Zoom-Out) ─── */
 
+/* 1) Make the team section bleed full width and stay black */
+.team-section {
+  background: #000;
+  padding: 4rem 1rem 1rem;  /* you can tweak the bottom padding */
+  margin-top: 60px;         /* pushes it below your fixed navbar */
+}
+
+/* 2) Let the grid fill the available space (with a bit of side padding) */
+.team-container {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: none;  
+  padding: 0 1rem;    /* keeps the cards off the very edges of the screen */
+  margin: 0 auto;
+}
+
+/* 3) On mobile, stack them with extra breathing room */
+@media (max-width: 768px) {
+  .team-container {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+}
+
+
 /* 1) Float animation for entire card */
 @keyframes floatCard {
   0%, 100% { transform: translateY(0); }
