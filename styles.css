@@ -814,7 +814,7 @@ a:hover {
   align-items: stretch;        /* equal height cards */
   max-width: 1400px;
   margin: auto;
-  margin-bottom: -8rem;
+  margin-bottom: -6rem;
 }
 @media (max-width: 768px) {
   /* stack team cards vertically and add breathing room */
