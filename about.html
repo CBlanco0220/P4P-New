@@ -4,212 +4,131 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>P4P Coaching – Coaching</title>
-
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
-
-  <!-- Inline Styles -->
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Montserrat', sans-serif;
       background: #fff;
-      color: #fff;
+      color: #000;
       overflow-x: hidden;
     }
 
     /* NAVBAR */
-    .header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #000;
-      z-index: 999;
-    }
-    .navbar {
-      position: relative;
-      max-width: 1200px;
-      height: 60px;
-      margin: 0 auto;
-    }
-    .nav-container {
-      position: relative;
-      height: 100%;
-    }
-    .nav-logo {
-      position: absolute;
-      left: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    .nav-logo img {
-      height: 40px;
-    }
+    .header { position: fixed; top: 0; width: 100%; background: #000; z-index: 999; }
+    .navbar { max-width: 1200px; height: 60px; margin: 0 auto; position: relative; }
+    .nav-logo { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); }
+    .nav-logo img { height: 40px; }
     .nav-links {
-      position: absolute;
-      left: 50%;
-      top: 50%;
+      position: absolute; left: 50%; top: 50%;
       transform: translate(-50%, -50%);
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
+      display: flex; gap: 1.5rem; list-style: none;
     }
     .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      transition: background 0.2s;
+      color: #fff; text-decoration: none; font-weight: 600;
+      padding: .5rem 1rem; border-radius: 4px; transition: background .2s;
     }
     .nav-links a:hover,
-    .nav-links a.active-link {
-      background: #dc2626;
-    }
+    .nav-links a.active-link { background: #dc2626; }
     .hamburger {
-      position: absolute;
-      right: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
       display: none;
-      flex-direction: column;
-      gap: 4px;
-      cursor: pointer;
+      position: absolute; right: 1rem; top: 50%; transform: translateY(-50%);
+      flex-direction: column; gap: 4px; cursor: pointer;
     }
-    .hamburger .bar {
-      width: 25px;
-      height: 3px;
-      background: #fff;
-    }
+    .hamburger .bar { width: 25px; height: 3px; background: #fff; }
 
-    /* TEAM SECTION */
-    .team-section {
-      padding: 100px 1rem 2rem;
-      background: #000;
-      text-align: center;
-    }
-    .section-title {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      font-weight: 700;
-      color: #fff;
-    }
-    .team-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .team-card {
-      background: #111;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .team-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.7);
-    }
-    .team-photo {
-      width: 100%;
-      height: 0;
-      padding-top: 75%;
-      background-size: cover;
-      background-position: center;
-    }
-    .team-content {
-      padding: 1.5rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .team-name {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-    }
-    .team-bio {
-      flex: 1;
-      font-size: 1rem;
-      line-height: 1.5;
-      margin-bottom: 1rem;
-    }
-    .btn {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background: transparent;
-      border: 2px solid #fff;
-      color: #fff;
-      font-weight: 600;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: background 0.3s, color 0.3s;
-      margin-top: auto;
-    }
-    .btn:hover {
-      background: #fff;
-      color: #000;
-    }
-
-    /* POUND 4 POUND LOGO */
-    .section-logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      font-weight: 700;
-      margin: 3rem 0 1rem;
-      color: #fff;
-      letter-spacing: 0.1em;
-    }
-    .section-logo::before,
-    .section-logo::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: #666;
-      margin: 0 1rem;
-    }
-    .section-logo .p { color: #dc2626; }
-    .section-logo .four {
-      color: #000;
-      background: #fff;
-      padding: 0 0.25rem;
-      border-radius: 2px;
-    }
-
-    /* FOOTER */
-    .site-footer {
-      background: #000;
-      padding: 1rem 0;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #777;
-      margin-top: 1rem;
-    }
-
-    /* RESPONSIVE */
     @media (max-width: 768px) {
       .hamburger { display: flex; }
       .nav-links {
         display: none;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: #000;
-        flex-direction: column;
-        width: 200px;
-        padding: 1rem 0;
+        position: absolute; top: 60px; right: 0; background: #000;
+        flex-direction: column; width: 200px; padding: 1rem 0;
       }
       .nav-links.active { display: flex; }
+    }
+
+    /* TEAM SECTION */
+    .team-section {
+      padding: 100px 1rem 2rem; background: #000; text-align: center;
+    }
+    .section-title {
+      font-size: 2.5rem; margin-bottom: 2rem; font-weight: 700; color: #fff;
+    }
+    .team-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+      gap: 2rem; max-width: 1200px; margin: 0 auto;
+    }
+    .team-card {
+      background: #fff; border-radius: 12px;
+      overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,.15);
+      display: flex; flex-direction: column;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,.2);
+    }
+    .team-photo {
+      width: 100%;
+      height: 650px;       /* your chosen height */
+      object-fit: cover;
+      transition: transform .3s;
+    }
+    .team-content {
+      padding: 1.5rem; display: flex; flex-direction: column; flex: 1;
+    }
+    .team-name {
+      font-size: 1.5rem; margin-bottom: .5rem; font-weight: 700; color: #000;
+    }
+    .team-bio {
+      flex: 1; font-size: 1rem; line-height: 1.5; margin-bottom: 1rem; color: #333;
+    }
+    .btn {
+      margin-top: auto;
+      text-decoration: none; text-align: center;
+      padding: .75rem 1.5rem;
+      border: 2px solid #000; color: #000; font-weight: 600;
+      border-radius: 4px; transition: background .3s, color .3s;
+    }
+    .btn:hover { background: #000; color: #fff; }
+
+    /* FADE-IN ON MOBILE */
+    @media (max-width: 768px) {
+      .team-card {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity .6s ease-out, transform .6s ease-out;
+      }
+      .team-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* POUND 4 POUND */
+    .section-logo {
+      display: flex; align-items: center; justify-content: center;
+      margin: 3rem 0 1rem; font-size: 2rem; font-weight: 700; color: #fff;
+    }
+    .section-logo::before,
+    .section-logo::after {
+      content: ''; flex: 1; height: 1px; background: #666; margin: 0 1rem;
+    }
+    .section-logo .p { color: #dc2626; }
+    .section-logo .four {
+      background: #fff; color: #000; padding: 0 .25rem; border-radius: 2px;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: #000; padding: 1rem 0;
+      text-align: center; font-size: .9rem; color: #777; margin-top: 1rem;
     }
   </style>
 </head>
 <body>
+
   <!-- NAVBAR -->
   <header class="header">
     <nav class="navbar">
@@ -232,13 +151,13 @@
     </nav>
   </header>
 
-  <!-- TEAM / COACHING SECTION -->
+  <!-- OUR TEAM -->
   <section class="team-section">
     <h2 class="section-title">Our Team</h2>
     <div class="team-container">
-      <!-- Joe Borenstein -->
+      <!-- Joe -->
       <div class="team-card">
-        <div class="team-photo" style="background-image:url('Joe Worlds.jpg');"></div>
+        <img src="Joe Worlds.jpg" alt="Joe Borenstein" class="team-photo"/>
         <div class="team-content">
           <h3 class="team-name">Joe Borenstein</h3>
           <p class="team-bio">
@@ -247,9 +166,9 @@
           <a href="joe.html" class="btn">Learn More</a>
         </div>
       </div>
-      <!-- Philip Truong -->
+      <!-- Phil -->
       <div class="team-card">
-        <div class="team-photo" style="background-image:url('phil.jpg');"></div>
+        <img src="phil.jpg" alt="Philip Truong" class="team-photo"/>
         <div class="team-content">
           <h3 class="team-name">Philip Truong</h3>
           <p class="team-bio">
@@ -273,12 +192,29 @@
     <p>&copy; <span id="year"></span> P4P Coaching. All Rights Reserved.</p>
   </footer>
 
-  <!-- Scripts -->
+  <!-- SCRIPTS -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    const hamburger = document.getElementById('hamburger'),
-          navLinks  = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+
+    // mobile fade-in on scroll
+    if (window.innerWidth <= 768) {
+      const cards = document.querySelectorAll('.team-card');
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      cards.forEach(card => observer.observe(card));
+    }
+
+    // hamburger toggle
+    const ham = document.getElementById('hamburger'),
+          nav = document.getElementById('nav-links');
+    ham.addEventListener('click', () => nav.classList.toggle('active'));
   </script>
 </body>
 </html>
