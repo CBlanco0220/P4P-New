@@ -821,7 +821,7 @@ a:hover {
   .team-container {
     display: grid !important;
     grid-template-columns: 1fr !important;
-    row-gap: 2rem;       /* space between each card */
+    row-gap: 5rem;       /* space between each card */
     padding: 0 1rem;     /* a little side padding so cards don’t touch the edges */
   }
 
