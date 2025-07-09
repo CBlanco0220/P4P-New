@@ -164,7 +164,7 @@ a:hover {
   justify-content: center;
 }
 
-
+/* WHY P4P SECTION */
 /* WHY P4P SECTION */
 .why-p4p-section {
   position: relative;
@@ -775,14 +775,6 @@ a:hover {
 
 /* ─── Team Section (LARGER CARDS + COOL EFFECTS + Zoom-Out) ─── */
 
-/* make sure the team section sits below the fixed navbar */
-@media (max-width: 768px) {
-  .team-section {
-    margin-top: 100px;    /* height of your header */
-    padding-top: 1rem;   /* optional extra breathing room */
-  }
-}
-
 /* 1) Float animation for entire card */
 @keyframes floatCard {
   0%, 100% { transform: translateY(0); }
@@ -812,6 +804,7 @@ a:hover {
   color: transparent;
   animation: floatCard 8s ease-in-out infinite reverse;
   margin-bottom: 2.5rem;
+  margin-top: 4.5rem;
 }
 /* GRID: fewer, wider columns */
 .team-container {
@@ -820,7 +813,7 @@ a:hover {
   gap: 2.5rem;
   align-items: stretch;        /* equal height cards */
   max-width: 1400px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 /* CARD STYLES */
