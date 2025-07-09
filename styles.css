@@ -775,6 +775,20 @@ a:hover {
 
 /* ─── Team Section (LARGER CARDS + COOL EFFECTS + Zoom-Out) ─── */
 
+/* only hide & animate on small screens */
+@media (max-width: 768px) {
+  .team-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .team-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 @media (max-width: 768px) {
   .team-photo {
     /* force a 1:1 aspect ratio and crop */
