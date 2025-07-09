@@ -775,6 +775,14 @@ a:hover {
 
 /* ─── Team Section (LARGER CARDS + COOL EFFECTS + Zoom-Out) ─── */
 
+/* make sure the team section sits below the fixed navbar */
+@media (max-width: 768px) {
+  .team-section {
+    margin-top: 60px;    /* height of your header */
+    padding-top: 1rem;   /* optional extra breathing room */
+  }
+}
+
 /* 1) Float animation for entire card */
 @keyframes floatCard {
   0%, 100% { transform: translateY(0); }
@@ -883,4 +891,3 @@ a:hover {
   color: #000;
   box-shadow: 0 0 25px rgba(0,0,0,0.3);
 }
-
