@@ -19,25 +19,49 @@
     }
     /* Navbar */
     .header {
-      position: fixed; top: 0; width: 100%; background: #000; z-index: 999;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #000;
+      z-index: 999;
     }
     .navbar {
-      max-width: 1200px; margin: 0 auto; display: flex; align-items: center; padding: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* center logo + links */
+      padding: 1rem;
     }
     .nav-logo img { height: 40px; }
     .nav-links {
-      list-style: none; display: flex; margin-left: auto; gap: 1.5rem;
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
     }
     .nav-links a {
-      color: #fff; text-decoration: none; font-weight: 600;
-      padding: 0.5rem 1rem; border-radius: 4px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background 0.2s;
     }
     .nav-links a.active-link,
     .nav-links a:hover {
       background: #dc2626;
     }
-    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 4px; }
-    .hamburger .bar { width: 25px; height: 3px; background: #fff; }
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .hamburger .bar {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+    }
 
     /* Team Section */
     .team-section {
@@ -72,8 +96,10 @@
       box-shadow: 0 15px 40px rgba(0,0,0,0.7);
     }
     .team-photo {
-      width: 100%; height: 0; padding-top: 75%;
-      object-fit: cover; background-size: cover;
+      width: 100%;
+      height: 0;
+      padding-top: 75%;
+      background-size: cover;
       background-position: center;
     }
     .team-content {
@@ -83,11 +109,15 @@
       flex-direction: column;
     }
     .team-name {
-      font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
     }
     .team-bio {
       flex: 1;
-      font-size: 1rem; line-height: 1.5; margin-bottom: 1rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
     }
     .btn {
       display: inline-block;
@@ -126,7 +156,12 @@
       margin: 0 1rem;
     }
     .section-logo .p { color: #dc2626; }
-    .section-logo .four { color: #000; background: #fff; padding: 0 0.25rem; border-radius: 2px; }
+    .section-logo .four {
+      color: #000;
+      background: #fff;
+      padding: 0 0.25rem;
+      border-radius: 2px;
+    }
 
     /* Footer */
     .site-footer {
@@ -141,7 +176,15 @@
     /* Responsive */
     @media (max-width: 768px) {
       .hamburger { display: flex; }
-      .nav-links { display: none; position: absolute; top: 60px; right: 0; background: #000; flex-direction: column; width: 200px; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #000;
+        flex-direction: column;
+        width: 200px;
+      }
       .nav-links.active { display: flex; }
     }
   </style>
